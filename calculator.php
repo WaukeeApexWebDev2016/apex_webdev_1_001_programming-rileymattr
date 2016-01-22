@@ -1,6 +1,7 @@
 <?php
 echo "Shapes Calculator" . "\n";
-$shape = readline("Please Enter Shape Here: ");
+$shape = readline("Please Enter Shape Here or type Help: ");
+while( $shape != "exit"){
 if ($shape == "square"){
     $SquSide = readline("What is the Side Length? ");
     echo "the area is " . $SquSide * $SquSide . "\n";
@@ -18,7 +19,7 @@ if ($shape == "trapezoid"){
     $TrapBase1 = readline ("What is the length of base 1? ");
     $TrapBase2 = readline ("What is the length of base 2? ");
     $TrapHeight = readline ("What is the heigth? ");
-    $TrapBaseAvg = $TrapBase1 * $TrapBase2;
+    $TrapBaseAvg = ($TrapBase1 + $TrapBase2) / 2;
     echo "the area is " . $TrapBaseAvg * $TrapHeight . "\n";
 }
 if ($shape == "triangle"){
@@ -26,5 +27,11 @@ if ($shape == "triangle"){
     $TriHeight = readline ("What is the height? ");
     $Area = $TriBase * $TriHeight;
     echo "the area is " . $Area / 2 . "\n";
+}
+if ($shape == "help"){
+  echo "this program solves \n -Squares \n -Circles \n -Rectangles \n -Trapezoids
+  -Triangles \n type exit to leave \n";
+}
+$shape = readline("Please Enter Shape Here: ");
 }
 ?>
